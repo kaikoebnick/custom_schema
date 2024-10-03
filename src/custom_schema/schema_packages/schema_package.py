@@ -28,11 +28,11 @@ class NewSchemaPackage(Schema):
     )
     message = Quantity(type=str)
 
-    def normalize(self, archive: 'EntryArchive', logger: 'BoundLogger') -> None:
-        super().normalize(archive, logger)
+    def normalize(self, archive, logger):
+        super(Sample, self).normalize(archive, logger)
 
-        logger.info('NewSchema.normalize', parameter=configuration.parameter)
-        self.message = f'Hello {self.name}!'
+        if self.sample_id is None:
+            self.sample_id = f'{self.added_date}--{self.formula}'
 
 
 m_package.__init_metainfo__()
