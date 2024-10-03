@@ -29,7 +29,7 @@ class NewSchemaPackage(Schema):
     message = Quantity(type=str)
 
     def normalize(self, archive, logger):
-        super(Sample, self).normalize(archive, logger)
+        super(schema, self).normalize(archive, logger)
 
         if self.sample_id is None:
             self.sample_id = f'{self.added_date}--{self.formula}'
