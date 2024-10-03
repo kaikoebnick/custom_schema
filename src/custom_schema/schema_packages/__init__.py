@@ -14,4 +14,5 @@ class NewSchemaPackageEntryPoint(SchemaPackageEntryPoint):
 schema_package_entry_point = NewSchemaPackageEntryPoint(
     name='NewSchemaPackage',
     description='New schema package entry point configuration.',
+    plugin_package='tools',
 )
