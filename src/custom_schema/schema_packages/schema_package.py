@@ -14,9 +14,9 @@ from nomad.config import config
 from nomad.datamodel.data import Schema
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
 from nomad.metainfo import (
-Quantity, 
-Datetime, 
-Author, 
+Author,
+Datetime,
+Quantity,
 SchemaPackage,
 )
 
