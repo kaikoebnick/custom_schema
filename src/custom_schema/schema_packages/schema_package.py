@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 from nomad.config import config
 from nomad.datamodel.data import Schema
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
-from nomad.metainfo import Quantity, SchemaPackage
+from nomad.metainfo import Quantity, Datetime, Author, SchemaPackage
 
 configuration = config.get_plugin_entry_point(
     'custom_schema.schema_packages:schema_package_entry_point'
@@ -26,7 +26,13 @@ class NewSchemaPackage(Schema):
     name = Quantity(
         type=str, a_eln=ELNAnnotation(component=ELNComponentEnum.StringEditQuantity)
     )
-    message = Quantity(type=str)
+    author = Quantity(
+        type=Author, a_eln=ELNAnnotation(component=ELNComponentEnum.AuthorEditQuantity)
+    )
+    date_time = Quantity(
+        type=Datetime, a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
+    )
+    sample_id = Quantity(type=str)
 
     def normalize(self, archive, logger):
         super(Schema, self).normalize(archive, logger)
