@@ -13,7 +13,12 @@ if TYPE_CHECKING:
 from nomad.config import config
 from nomad.datamodel.data import Schema
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
-from nomad.metainfo import Quantity, Datetime, Author, SchemaPackage
+from nomad.metainfo import (
+Quantity, 
+Datetime, 
+Author, 
+SchemaPackage
+)
 
 configuration = config.get_plugin_entry_point(
     'custom_schema.schema_packages:schema_package_entry_point'
@@ -30,7 +35,8 @@ class NewSchemaPackage(Schema):
         type=Author, a_eln=ELNAnnotation(component=ELNComponentEnum.AuthorEditQuantity)
     )
     date_time = Quantity(
-        type=Datetime, a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
+        type=Datetime,
+        a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
     )
     sample_id = Quantity(type=str)
 
