@@ -17,7 +17,7 @@ from nomad.metainfo import (
 Quantity, 
 Datetime, 
 Author, 
-SchemaPackage
+SchemaPackage,
 )
 
 configuration = config.get_plugin_entry_point(
