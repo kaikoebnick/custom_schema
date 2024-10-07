@@ -38,6 +38,10 @@ class NewSchemaPackage(Schema):
         type=Datetime,
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
     )
+    rich_text = Quantity(
+        type=Richtext,
+        a_eln=ELNAnnotation(component=ELNComponentEnum.RichTextEditQuantity)
+    )
     sample_id = Quantity(type=str)
 
     def normalize(self, archive, logger):
