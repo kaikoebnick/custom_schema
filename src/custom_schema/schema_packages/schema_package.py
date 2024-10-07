@@ -37,6 +37,14 @@ class NewSchemaPackage(Schema):
         #default=
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
     )
+    material = Quantity(
+        type=str, 
+        description='''Enter your material.''',
+        a_eln=ELNAnnotation(
+            component=ELNComponentEnum.EnumEditQuantity,
+            suggestions=['gold', 'silver'],
+        )
+    )
     nice_peak = Quantity(
         type=bool,
         description='''Check if there is a nice peak in the measurement.''',
@@ -47,6 +55,22 @@ class NewSchemaPackage(Schema):
         description='''Choose your category.''',
         a_eln=ELNAnnotation(
             component=ELNComponentEnum.RadioEnumEditQuantity,
+        )
+    )
+    voltage = Quantity(
+        type=float,
+        description='''Enter your voltage.''',
+        a_eln=ELNAnnotation(
+            component=ELNComponentEnum.NumberEditQuantity,
+        )
+    )
+    number_of_people_killed_during_measurement = Quantity(
+        type=int,
+        description='''Let us hope it is a zero.''',
+        a_eln=ELNAnnotation(
+            component=ELNComponentEnum.SliderEditQuantity,
+            minValue=0,
+            maxValue=50,
         )
     )
     description = Quantity(
