@@ -81,7 +81,7 @@ class NewSchemaPackage(Schema):
     sample_id = Quantity(
         type=str,
         description='''The ID will be automatically generated.''',
-        a_eln=ELNAnnotation(default=f'{self.date_and_time}--{self.measurement_name}'),
+        a_eln=ELNAnnotation(default=f'{date_and_time}--{measurement_name}'),
     )
 
     """def normalize(self, archive, logger):
