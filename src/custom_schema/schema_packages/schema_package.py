@@ -14,8 +14,8 @@ from nomad.config import config
 from nomad.datamodel.data import Schema
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
 from nomad.metainfo import (
-Author,
-Datetime,
+#Author,
+#Datetime,
 Quantity,
 SchemaPackage,
 )
@@ -33,7 +33,7 @@ class NewSchemaPackage(Schema):
     )
     author = Quantity(
         type=Author, a_eln=ELNAnnotation(component=ELNComponentEnum.AuthorEditQuantity)
-    ) //TODO: default current user
+    ) # TODO: default current user
     date_time = Quantity(
         type=Datetime,
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
