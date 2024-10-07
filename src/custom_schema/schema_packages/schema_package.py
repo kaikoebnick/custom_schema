@@ -17,10 +17,7 @@ Author,
 Datetime,
 )
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
-from nomad.metainfo import (
-Quantity,
-SchemaPackage,
-)
+from nomad.metainfo import Quantity, SchemaPackage
 
 configuration = config.get_plugin_entry_point(
     'custom_schema.schema_packages:schema_package_entry_point'
