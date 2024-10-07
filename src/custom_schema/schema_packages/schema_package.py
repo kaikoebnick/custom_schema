@@ -39,7 +39,7 @@ class NewSchemaPackage(Schema):
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
     )
     rich_text = Quantity(
-        type=string,
+        type=str,
         a_eln=ELNAnnotation(component=ELNComponentEnum.RichTextEditQuantity)
     )
     sample_id = Quantity(type=str)
