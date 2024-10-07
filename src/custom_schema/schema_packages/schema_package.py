@@ -81,13 +81,14 @@ class NewSchemaPackage(Schema):
     sample_id = Quantity(
         type=str,
         description='''The ID will be automatically generated.''',
+        a_eln=ELNAnnotation(default=f'{self.date_and_time}--{self.measurement_name}'),
     )
 
-    def normalize(self, archive, logger):
+    """def normalize(self, archive, logger):
         super(Schema, self).normalize(archive, logger)
 
         if self.sample_id is None:
-            self.sample_id = f'{self.date_and_time}--{self.measurement_name}'
+            self.sample_id = f'{self.date_and_time}--{self.measurement_name}'"""
 
 
 m_package.__init_metainfo__()
