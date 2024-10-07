@@ -63,7 +63,7 @@ class NewSchemaPackage(Schema):
         super(Schema, self).normalize(archive, logger)
 
         if self.sample_id is None:
-            self.sample_id = f'{self.datetime}--{self.name}'
+            self.sample_id = f'{self.datetime}--{self.meausrement_name}'
 
 
 m_package.__init_metainfo__()
