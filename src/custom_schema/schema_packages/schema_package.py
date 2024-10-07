@@ -12,9 +12,9 @@ if TYPE_CHECKING:
 
 from nomad.config import config
 from nomad.datamodel.data import (
-Schema,
 Author,
 Datetime,
+Schema,
 )
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
 from nomad.metainfo import Quantity, SchemaPackage
