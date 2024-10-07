@@ -33,7 +33,7 @@ class NewSchemaPackage(Schema):
     )
     author = Quantity(
         type=Author, a_eln=ELNAnnotation(component=ELNComponentEnum.AuthorEditQuantity)
-    )
+    ) //TODO: default current user
     date_time = Quantity(
         type=Datetime,
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
