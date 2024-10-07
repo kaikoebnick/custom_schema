@@ -44,14 +44,8 @@ class NewSchemaPackage(Schema):
         a_eln=ELNAnnotation(component=ELNComponentEnum.BoolEditQuantity) #default
     )
     measurement_category = Quantity(
-        type=(
-            type_kind=enum,
-            type_data={
-              "brand", "Ford",
-            }
-        ),
+        type=MEnum('calibration', 'real_measurment'),
         description='''Choose your category.''',
-        #default=
         a_eln=ELNAnnotation(
             component=ELNComponentEnum.RadioEnumEditQuantity,
         )
