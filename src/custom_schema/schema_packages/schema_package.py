@@ -14,8 +14,8 @@ from nomad.config import config
 from nomad.datamodel.data import Schema
 from nomad.datamodel.metainfo.annotations import ELNAnnotation, ELNComponentEnum
 from nomad.metainfo import (
-#Author,
-#Datetime,
+Author,
+Datetime,
 Quantity,
 SchemaPackage,
 )
@@ -39,7 +39,7 @@ class NewSchemaPackage(Schema):
         a_eln=ELNAnnotation(component=ELNComponentEnum.DateTimeEditQuantity)
     )
     rich_text = Quantity(
-        type=Richtext,
+        type=string,
         a_eln=ELNAnnotation(component=ELNComponentEnum.RichTextEditQuantity)
     )
     sample_id = Quantity(type=str)
