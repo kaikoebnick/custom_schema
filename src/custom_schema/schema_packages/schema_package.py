@@ -26,12 +26,12 @@ m_package = SchemaPackage()
 
 
 class NewSchemaPackage(Schema):
-    meausrement_name = Quantity(
+    measurement_name = Quantity(
         type=str, 
         description='''A nice and short name for your measurement.''',
         a_eln=ELNAnnotation(component=ELNComponentEnum.StringEditQuantity)
     )
-    datetime = Quantity(
+    date_and_time = Quantity(
         type=Datetime,
         description='''Date and time the measurement was taken.''',
         #default=
@@ -63,7 +63,7 @@ class NewSchemaPackage(Schema):
         super(Schema, self).normalize(archive, logger)
 
         if self.sample_id is None:
-            self.sample_id = f'{self.datetime}--{self.meausrement_name}'
+            self.sample_id = f'{self.date_and_time}--{self.measurement_name}'
 
 
 m_package.__init_metainfo__()
